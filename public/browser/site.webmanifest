@@ -1,0 +1,19 @@
+{
+  "background_color": "#0a0e68",
+  "display": "standalone",
+  "icons": [
+    {
+      "sizes": "192x192",
+      "src": "/browser/android-chrome-192x192.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "512x512",
+      "src": "/browser/android-chrome-512x512.png",
+      "type": "image/png"
+    }
+  ],
+  "name": "Petersburg Bridge Test",
+  "short_name": "Bridge Test",
+  "theme_color": "#0a0e68"
+}
