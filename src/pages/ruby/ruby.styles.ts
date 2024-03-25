@@ -22,6 +22,8 @@ export const StyledRubyChildren = styled.div`
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  align-items: center;
+  z-index: 1;
 `
 
 export const RubyWallpaperBottom = styled.div`
