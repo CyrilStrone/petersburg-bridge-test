@@ -20,8 +20,7 @@
 
 | Path            | Description                                                                          |
 | --------------- | ------------------------------------------------------------------------------------ |
-| /src/           | The root directory containing the application code.                                                 |
-| /src/api        | The directory with TanStack.                                                                    |
+| /src/           | The root directory containing the application code.                                                 |                                                                 |
 | /src/assets     | Contains static files such as icons, pictures and logos.                     |
 | /src/components | Here are the components that are available globally.                          |
 | /src/core       | The directory with special data.                                                           |
