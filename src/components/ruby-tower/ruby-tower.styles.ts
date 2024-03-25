@@ -2,15 +2,22 @@ import styled, { css, keyframes } from 'styled-components'
 
 /****************************************** RubyTower *************************************************/
 export const RubyTowerWrapper = styled.div<{ $backgroundURL: string }>`
-  width: 170px;
-  height: 339px;
+  width: -webkit-fill-available;
+  height: min-content;
   background-image: url(${(props) => props.$backgroundURL});
   background-repeat: no-repeat;
-  background-position: bottom;
-  background-position-y: 38px;
+  background-position: top;
   background-size: contain;
-
   padding-top: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+`
+
+export const RubyTowerLevelContainer = styled.div`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -45,10 +52,9 @@ export const RubyTowerLevel = styled.div<{
 export const RubyTowerLevelLine = styled.div<{
   $position?: 'horizontal' | 'vertical'
 }>`
-  position: absolute;
   background-color: ${(props) => props.theme.colors.white[40]};
   box-sizing: border-box;
-
+  position: absolute;
   ${(props) =>
     props.$position === 'horizontal'
       ? css`
@@ -70,9 +76,8 @@ export const RubyTowerLevelLine = styled.div<{
 export const RubyTowerLevelFull = styled.div<{
   $isActive?: boolean
 }>`
-  position: absolute;
+  position: relative;
   box-sizing: border-box;
-  top: 62px;
   border-radius: 4px;
   width: 73px;
   height: 47px;

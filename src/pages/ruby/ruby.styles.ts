@@ -24,6 +24,7 @@ export const StyledRubyChildren = styled.div`
   justify-content: flex-start;
   align-items: center;
   z-index: 1;
+  padding-top: 20px;
 `
 
 export const RubyWallpaperBottom = styled.div`

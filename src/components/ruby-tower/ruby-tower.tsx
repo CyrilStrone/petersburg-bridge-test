@@ -3,6 +3,7 @@ import {
   LevelList,
   RubyTowerDiamond,
   RubyTowerLevel,
+  RubyTowerLevelContainer,
   RubyTowerLevelFull,
   RubyTowerLevelLine,
   RubyTowerProps,
@@ -24,18 +25,20 @@ export const RubyTower: FC<RubyTowerProps> = (props) => {
         />
         <RubyTowerDiamond $backgroundURL={DiamondPattern} />
       </RubyTowerLevelFull>
-      {LevelList.map((e) => (
-        <RubyTowerLevel
-          $height={e.height}
-          $width={e.width}
-          $color={e.color}
-          $defaultColor={e.defaultColor}
-          $isActive={props.level && e.level <= props.level}
-        >
-          <RubyTowerLevelLine $position="horizontal" />
-          <RubyTowerLevelLine $position="vertical" />
-        </RubyTowerLevel>
-      ))}
+      <RubyTowerLevelContainer>
+        {LevelList.map((e) => (
+          <RubyTowerLevel
+            $height={e.height}
+            $width={e.width}
+            $color={e.color}
+            $defaultColor={e.defaultColor}
+            $isActive={props.level && e.level <= props.level}
+          >
+            <RubyTowerLevelLine $position="horizontal" />
+            <RubyTowerLevelLine $position="vertical" />
+          </RubyTowerLevel>
+        ))}
+      </RubyTowerLevelContainer>
     </RubyTowerWrapper>
   )
 }
