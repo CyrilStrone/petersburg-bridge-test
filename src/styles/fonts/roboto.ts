@@ -10,7 +10,7 @@ const Roboto = css<FontProps>`
   font-style: normal;
   line-height: normal;
   color: ${(props) =>
-    props.color ? props.color : props.theme.colors.other['1f1f1f']};
+    props.color ? props.color : props.theme.colors.other.c53030};
   cursor: ${(props) => props.cursor && props.cursor};
 `
 
