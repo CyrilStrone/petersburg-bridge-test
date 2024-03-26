@@ -15,26 +15,29 @@ export const RubyTowerWrapper = styled.div<{ $backgroundURL: string }>`
   justify-content: space-between;
   align-items: center;
   gap: 7px;
+  user-select: none;
 `
 
-export const RubyTowerLevelContainer = styled.div`
+export const RubyTowerLevelContainer = styled.div<{ $gap?: number }>`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   justify-content: flex-start;
-  gap: 2px;
+  gap: ${(props) => `${props.$gap}px`};
 `
 
 export const RubyTowerLevel = styled.div<{
-  $width: string
-  $height: string
+  $width: string | number
+  $height: string | number
   $color: string
   $defaultColor: string
   $isActive?: boolean
 }>`
   position: relative;
-  width: ${(props) => props.$width};
-  height: ${(props) => props.$height};
+  width: ${(props) =>
+    !isNaN(Number(props.$width)) ? `${props.$width}px` : props.$width};
+  height: ${(props) =>
+    !isNaN(Number(props.$height)) ? `${props.$height}px` : props.$height};
   ${(props) =>
     props.$isActive
       ? css`

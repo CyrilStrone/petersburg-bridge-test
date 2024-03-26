@@ -1,5 +1,15 @@
 import styled from 'styled-components'
 
+/****************************************** Ruby *************************************************/
+export const RubyBottom = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  z-index: 1;
+  position: relative;
+`
+
 /****************************************** RubyWrapper *************************************************/
 export const StyledRubyWrapper = styled.div`
   width: 360px;
@@ -21,10 +31,10 @@ export const StyledRubyChildren = styled.div`
   max-height: 100dvh;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   z-index: 1;
-  padding-top: 20px;
+  gap: 36px;
 `
 
 export const RubyWallpaperBottom = styled.div`
@@ -36,13 +46,13 @@ export const RubyWallpaperBottom = styled.div`
     #0b0f71 100%
   );
   position: absolute;
-  top: 317px;
+  top: 370px;
   width: 100dvw;
 `
 
 export const RubyWallpaperCloud = styled.div<{ $backgroundURL: string }>`
   position: absolute;
-  top: 106px;
+  top: 60px;
   background-image: url(${(props) => props.$backgroundURL});
   height: 427px;
   width: 100dvw;
@@ -52,7 +62,7 @@ export const RubyWallpaperCloud = styled.div<{ $backgroundURL: string }>`
 
 export const RubyWallpaperBuilding = styled.div<{ $backgroundURL: string }>`
   position: absolute;
-  top: calc(317px - 171.57px);
+  top: calc(370px - 171.57px);
   background-image: url(${(props) => props.$backgroundURL});
   height: 171.57px;
   min-height: 171.57px;
@@ -78,7 +88,7 @@ export const RubyWallpaperRoad = styled.div<{ $backgroundURL: string }>`
   position: absolute;
   background-image: url(${(props) => props.$backgroundURL});
   height: 169.6px;
-  top: 317px;
+  top: 370px;
   background-repeat: no-repeat;
   background-position: center;
   width: 100dvw;

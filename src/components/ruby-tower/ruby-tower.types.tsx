@@ -1,5 +1,5 @@
 export interface RubyTowerProps {
-  level?: ENUMRubyTowerLevel
+  level?: ENUMRubyTowerLevel | null
 }
 
 export enum ENUMRubyTowerLevel {
@@ -13,9 +13,10 @@ export enum ENUMRubyTowerLevel {
 }
 
 export interface ILevelList {
-  width: string
-  height: string
+  width: number | string
+  height: number | string
   color: string
   defaultColor: string
   level: ENUMRubyTowerLevel
+  getMaxPercent(): number
 }

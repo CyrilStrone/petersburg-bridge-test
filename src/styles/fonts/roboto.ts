@@ -14,6 +14,15 @@ const Roboto = css<FontProps>`
   cursor: ${(props) => props.cursor && props.cursor};
 `
 
+export const RobotoB14 = css`
+  ${Roboto};
+  font-size: 14px;
+  font-weight: 700;
+`
+export const SpanRobotoB14 = styled.span<FontProps>`
+  ${RobotoB14};
+`
+
 export const RobotoB32 = css`
   ${Roboto};
   font-size: 32px;

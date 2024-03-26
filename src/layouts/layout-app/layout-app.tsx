@@ -1,5 +1,5 @@
 import { LayoutAppWrapper } from '.'
-import { Ruby } from '@pages/ruby'
+import { Ruby, RubyWrapper } from '@pages/ruby'
 import React from 'react'
 
 /*
@@ -8,7 +8,9 @@ import React from 'react'
 export const LayoutApp: React.FC = () => {
   return (
     <LayoutAppWrapper>
-      <Ruby />
+      <RubyWrapper>
+        <Ruby />
+      </RubyWrapper>
     </LayoutAppWrapper>
   )
 }

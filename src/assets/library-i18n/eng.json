@@ -1,1 +1,17 @@
-{}
+{
+  "ruby": {
+    "button": {
+      "button": {
+        "hit": "HIT!",
+        "new-game": "A NEW GAME"
+      },
+      "text": {
+        "first": "Hello! Let's test your strength!",
+        "level-high": "THIS IS POWER! You've won the main prize!",
+        "level-low": "Not bad! Try again.",
+        "level-ruby": "Ruby",
+        "start": "Press the button at the right time!"
+      }
+    }
+  }
+}
