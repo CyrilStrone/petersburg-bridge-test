@@ -27,8 +27,6 @@
 | /src/           | The root directory containing the application code.                                                 |                                                                 |
 | /src/assets     | Contains static files such as icons, pictures and logos.                     |
 | /src/components | Here are the components that are available globally.                          |
-| /src/core       | The directory with special data.                                                           |
-| /src/functions  | The directory with functions.                                                                 |
 | /src/hooks/     | The directory with hooks.                                                                    |
 | /src/layouts    | The directory with wrappers for special pages.                                              |
 | /src/pages      | The directory with the project page files.                                                   |
