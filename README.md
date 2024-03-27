@@ -2,7 +2,7 @@
 
 [![wakatime](https://wakatime.com/badge/user/7f9aaba0-b5dd-4e0d-9f70-cd2b6ba680d1/project/018e7682-bcfd-4d67-a99f-3b7add243103.svg)](https://wakatime.com/badge/user/7f9aaba0-b5dd-4e0d-9f70-cd2b6ba680d1/project/018e7682-bcfd-4d67-a99f-3b7add243103)
 
-[![imageban](https://i1.imageban.ru/out/2024/03/26/0df3a53b4c2c8d80e3b5385cac503b03.gif)](https://imageban.ru)
+![GIF](https://github.com/CyrilStrone/petersburg-bridge-test/blob/main/git/petersburg-bridge-test.gif)
 
 ### Usage ⌨️
 
