@@ -30,7 +30,9 @@ export const RubyButtonStand = styled.img`
   background-size: cover;
 `
 
-export const RubyButtonButton = styled.svg<{ $isActive?: boolean }>`
+export const RubyButtonButton = styled.svg<{
+  $isActive?: boolean
+}>`
   width: 67px;
   height: 36px;
   position: absolute;
@@ -84,14 +86,17 @@ export const RubyInfoContainer = styled.div`
   gap: 13px;
 `
 
-export const RubyInfoButton = styled.button<{ $isActive?: boolean }>`
+export const RubyInfoButton = styled.button<{
+  $isActive?: boolean
+  $isStart?: boolean
+}>`
   height: 36px;
   width: 172px;
   user-select: none;
   transition: 0.2s;
-
+  cursor: pointer;
   ${(props) =>
-    !props.$isActive
+    !props.$isActive && props.$isStart
       ? css`
           border: 1px solid ${props.theme.colors.other.bb20a2};
           background-color: ${props.theme.colors.other.ffdf35};

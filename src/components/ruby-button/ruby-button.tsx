@@ -98,8 +98,8 @@ export const RubyButton: FC<RubyButtonProps> = memo((props) => {
               y2="6.5"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="white" />
-              <stop offset="1" stop-color="white" stop-opacity="0" />
+              <stop stopColor="white" />
+              <stop offset="1" stopColor="white" stopOpacity="0" />
             </linearGradient>
           </defs>
         </RubyButtonButton>
@@ -114,7 +114,11 @@ export const RubyButton: FC<RubyButtonProps> = memo((props) => {
             </SpanRobotoB14>
           )}
         </RubyInfoText>
-        <RubyInfoButton $isActive={props.isActive} onClick={handleOnClick}>
+        <RubyInfoButton
+          $isActive={props.isActive}
+          $isStart={props.isStart}
+          onClick={handleOnClick}
+        >
           <SpanRobotoB14 color={theme.colors.white[100]}>
             {buttonText}
           </SpanRobotoB14>
