@@ -1,16 +1,21 @@
 import { LayoutAppWrapper } from '.'
-import { Ruby, RubyWrapper } from '@pages/ruby'
-import React from 'react'
+import { ENUMRubyTowerLevel } from '@components/ruby-tower'
+import { Ruby } from '@pages/ruby'
+import React, { useState } from 'react'
 
 /*
  * The wrapper of the entire application
  */
 export const LayoutApp: React.FC = () => {
+  const [rubyLevel, setRubyLevel] = useState<ENUMRubyTowerLevel | null>(null)
+
+  // const getRubyLevel = useCallback(() => {
+  //   console.log('rubyLevel', rubyLevel)
+  // }, [rubyLevel])
+
   return (
     <LayoutAppWrapper>
-      <RubyWrapper>
-        <Ruby />
-      </RubyWrapper>
+      <Ruby level={rubyLevel} setLevel={setRubyLevel} />
     </LayoutAppWrapper>
   )
 }

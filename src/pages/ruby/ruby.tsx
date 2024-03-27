@@ -1,20 +1,13 @@
-import { RubyBottom } from '.'
+import { RubyBottom, RubyProps, RubyWrapper } from '.'
 import { RubyButton } from '@components/ruby-button'
 import { RubyRobot } from '@components/ruby-robot'
-import {
-  ENUMRubyTowerLevel,
-  LevelList,
-  RubyTower,
-} from '@components/ruby-tower'
+import { LevelList, RubyTower } from '@components/ruby-tower'
 import { useRubyThermometer } from '@hooks/use-ruby-thermometer'
 import { FC, useState } from 'react'
 
-export const Ruby: FC = () => {
+export const Ruby: FC<RubyProps> = (props) => {
   /****************************************** useState *************************************************/
   const [isStart, setIsStart] = useState<boolean>(false)
-  const [actualLevel, setActualLevel] = useState<ENUMRubyTowerLevel | null>(
-    null
-  )
 
   /****************************************** Another *************************************************/
   const { RubyThermometerComponent, getFillingPercent, resetRubyThermometer } =
@@ -30,32 +23,32 @@ export const Ruby: FC = () => {
     const level =
       LevelList.find((level) => fillingPercent <= level.getMaxPercent())
         ?.level || null
-    setActualLevel(level)
+    props.setLevel(level)
   }
   const handleReset = () => {
     resetRubyThermometer()
-    setActualLevel(null)
+    props.setLevel(null)
   }
   const handleStart = () => {
     setIsStart(true)
   }
 
   return (
-    <>
-      <RubyTower level={actualLevel} />
+    <RubyWrapper>
+      <RubyTower level={props.level} />
       <RubyBottom>
         <RubyThermometerComponent />
         <RubyButton
           handleReset={handleReset}
           handleStart={handleStart}
           handleHit={handleHit}
-          level={actualLevel}
+          level={props.level}
           duration={0}
-          isActive={!!actualLevel}
+          isActive={!!props.level}
           isStart={isStart}
         />
-        <RubyRobot level={actualLevel} />
+        <RubyRobot level={props.level} />
       </RubyBottom>
-    </>
+    </RubyWrapper>
   )
 }
