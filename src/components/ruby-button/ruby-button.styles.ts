@@ -58,21 +58,21 @@ export const RubyButtonHammer = styled.img<{
   $isStart?: boolean
 }>`
   object-fit: cover;
-  width: 100px;
-  height: 110px;
+  width: 120px;
+  height: 160px;
   position: absolute;
   transition: 0.1s linear;
   ${(props) =>
     props.$isActive
       ? css`
-          transform: translate(22px, -32px) rotate(-90deg);
+          transform: translate(25px, -34px) rotate(-90deg);
         `
       : props.$isStart
         ? css`
             transform: translate(52px, -52px) rotate(-38deg);
           `
         : css`
-            transform: translate(88px, -50px);
+            transform: translate(88px, -40px);
           `};
   z-index: 1;
 `

@@ -67,6 +67,7 @@ export const RubyButton: FC<RubyButtonProps> = memo((props) => {
           $isActive={props.isActive}
           $isStart={props.isStart}
         />
+
         <RubyButtonButton
           $isActive={props.isActive}
           width="67"
