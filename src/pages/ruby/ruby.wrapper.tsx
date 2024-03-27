@@ -8,9 +8,9 @@ import {
   RubyWrapperProps,
   StyledRubyChildren,
 } from '.'
-import BuildingPattern from '@assets/library-pattern/building.png'
-import CloudPattern from '@assets/library-pattern/cloud.png'
-import RoadPattern from '@assets/library-pattern/road.png'
+import BuildingPattern from '/library-pattern/building.png'
+import CloudPattern from '/library-pattern/cloud.png'
+import RoadPattern from '/library-pattern/road.png'
 import { FC } from 'react'
 
 export const RubyWrapper: FC<RubyWrapperProps> = (props) => {

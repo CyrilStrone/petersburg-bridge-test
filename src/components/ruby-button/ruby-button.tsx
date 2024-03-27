@@ -9,8 +9,8 @@ import {
   RubyInfoContainer,
   RubyInfoText,
 } from '.'
-import RubyHammer from '@assets/library-picture/ruby-hammer.png'
-import RubyStand from '@assets/library-picture/ruby-stand.png'
+import RubyHammer from '/library-picture/ruby-hammer.png'
+import RubyStand from '/library-picture/ruby-stand.png'
 import { ENUMRubyTowerLevel } from '@components/ruby-tower'
 import { SpanRobotoB14 } from '@styles/fonts/roboto'
 import { FC, memo, useEffect, useState } from 'react'

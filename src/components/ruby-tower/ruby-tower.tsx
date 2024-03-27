@@ -11,9 +11,9 @@ import {
   RubyTowerWrapper,
   LevelListGap,
 } from '.'
-import DiamondPicture from '@assets/library-picture/ruby-diamond.png'
-import StarPicture from '@assets/library-picture/ruby-star.png'
-import RubyTowerPicture from '@assets/library-picture/ruby-tower.png'
+import DiamondPicture from '/library-picture/ruby-diamond.png'
+import StarPicture from '/library-picture/ruby-star.png'
+import RubyTowerPicture from '/library-picture/ruby-tower.png'
 import { FC, memo } from 'react'
 
 export const RubyTower: FC<RubyTowerProps> = memo((props) => {

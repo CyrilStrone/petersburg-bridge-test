@@ -1,7 +1,7 @@
 import { RubyRobotImg, RubyRobotProps, RubyRobotWrapper } from '.'
-import RobotDefault from '@assets/library-gif/robot-default.gif'
-import RobotWinSuper from '@assets/library-gif/robot-win-super.gif'
-import RobotWin from '@assets/library-gif/robot-win.gif'
+import RobotDefault from '/library-gif/robot-default.gif'
+import RobotWinSuper from '/library-gif/robot-win-super.gif'
+import RobotWin from '/library-gif/robot-win.gif'
 import { ENUMRubyTowerLevel } from '@components/ruby-tower'
 import { FC, memo } from 'react'
 
