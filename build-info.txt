@@ -1,0 +1,3 @@
+version: 1.0.0
+mode: prod
+builtAt: 2026-11-09T15:48:23.741Z
