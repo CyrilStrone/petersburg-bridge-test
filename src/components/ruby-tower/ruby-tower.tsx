@@ -1,46 +1,45 @@
+import { publicAsset } from '@local/core/functions';
+
+import { FC, memo } from 'react';
+
+import { LevelList, LevelListGap } from './ruby-tower.constants';
 import {
-  ENUMRubyTowerLevel,
-  LevelList,
   RubyTowerDiamond,
-  RubyTowerLevel,
   RubyTowerLevelContainer,
   RubyTowerLevelFull,
+  RubyTowerLevelItem,
   RubyTowerLevelLine,
-  RubyTowerProps,
   RubyTowerStar,
   RubyTowerWrapper,
-  LevelListGap,
-} from '.'
-import DiamondPicture from '/library-picture/ruby-diamond.png'
-import StarPicture from '/library-picture/ruby-star.png'
-import RubyTowerPicture from '/library-picture/ruby-tower.png'
-import { FC, memo } from 'react'
+} from './ruby-tower.styles';
+import { IRubyTowerProps, RubyTowerLevel } from './ruby-tower.types';
 
-export const RubyTower: FC<RubyTowerProps> = memo((props) => {
+const DIAMOND_PICTURE = publicAsset('library-picture/ruby-diamond.png');
+const STAR_PICTURE = publicAsset('library-picture/ruby-star.png');
+const TOWER_PICTURE = publicAsset('library-picture/ruby-tower.png');
+
+export const RubyTower: FC<IRubyTowerProps> = memo((props) => {
   return (
-    <RubyTowerWrapper $backgroundURL={RubyTowerPicture}>
-      <RubyTowerLevelFull $isActive={props.level === ENUMRubyTowerLevel.RED_2}>
-        <RubyTowerStar
-          $isShow={props.level === ENUMRubyTowerLevel.RED_2}
-          $backgroundURL={StarPicture}
-        />
-        <RubyTowerDiamond $backgroundURL={DiamondPicture} />
+    <RubyTowerWrapper $backgroundURL={TOWER_PICTURE}>
+      <RubyTowerLevelFull $isActive={props.level === RubyTowerLevel.RED_2}>
+        <RubyTowerStar $isShow={props.level === RubyTowerLevel.RED_2} $backgroundURL={STAR_PICTURE} />
+        <RubyTowerDiamond $backgroundURL={DIAMOND_PICTURE} />
       </RubyTowerLevelFull>
       <RubyTowerLevelContainer $gap={LevelListGap}>
-        {LevelList.map((e, index) => (
-          <RubyTowerLevel
-            key={index}
-            $height={e.height}
-            $width={e.width}
-            $color={e.color}
-            $defaultColor={e.defaultColor}
-            $isActive={props.level ? e.level <= props.level : undefined}
+        {LevelList.map((item) => (
+          <RubyTowerLevelItem
+            key={item.level}
+            $height={item.height}
+            $width={item.width}
+            $color={item.color}
+            $defaultColor={item.defaultColor}
+            $isActive={props.level ? item.level <= props.level : undefined}
           >
-            <RubyTowerLevelLine $position="horizontal" />
-            <RubyTowerLevelLine $position="vertical" />
-          </RubyTowerLevel>
+            <RubyTowerLevelLine $position='horizontal' />
+            <RubyTowerLevelLine $position='vertical' />
+          </RubyTowerLevelItem>
         ))}
       </RubyTowerLevelContainer>
     </RubyTowerWrapper>
-  )
-})
+  );
+});

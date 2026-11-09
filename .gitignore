@@ -8,13 +8,17 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+dev-dist
 dist
 build
 dist-ssr
+dev-dist
 *.local
+dev-dist/*
 
 # Editor directories and files
 .vscode/*
+!.vscode/settings.json
 !.vscode/extensions.json
 .idea
 .DS_Store
@@ -23,4 +27,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-build/index.html
+*.npmrc
+/dev-dist
+/dist
+stats.html
+
+# Real env files. Values live in the deployment platform, see .env.template.
+.env
+.env.*
+!.env.template

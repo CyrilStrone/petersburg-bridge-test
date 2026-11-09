@@ -1,4 +1,4 @@
-import { IThemeProject } from './styled'
+import { IThemeProject } from './styled';
 
 export const themeProject: IThemeProject = {
   screens: {
@@ -35,4 +35,4 @@ export const themeProject: IThemeProject = {
       '0a0e68': '#0a0e68',
     },
   },
-}
+};

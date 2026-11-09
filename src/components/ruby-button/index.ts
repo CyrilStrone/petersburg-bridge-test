@@ -1,3 +1,3 @@
-export * from './ruby-button'
-export * from './ruby-button.styles'
-export * from './ruby-button.types'
+export { RubyButton } from './ruby-button';
+export * from './ruby-button.styles';
+export type { IRubyButtonProps } from './ruby-button.types';

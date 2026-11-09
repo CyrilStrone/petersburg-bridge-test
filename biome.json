@@ -1,0 +1,60 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
+  "files": {
+    "ignoreUnknown": false,
+    "includes": ["src/**", "*.ts", "*.tsx", "*.js", "*.jsx", "!node_modules", "!build", "!dist"]
+  },
+  "formatter": {
+    "lineEnding": "lf",
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 120,
+    "attributePosition": "auto",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "expand": "auto",
+    "useEditorconfig": true
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "single"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "nursery": {},
+      "a11y": {
+        "useButtonType": "warn",
+        "noStaticElementInteractions": "off"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off",
+        "noImportCycles": "error"
+      },
+      "performance": {
+        "noImgElement": "off"
+      },
+      "style": {
+        "useImportType": "off"
+      },
+      "preset": "recommended"
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [["@local/**"], ":BLANK_LINE:", ":PACKAGE:", ":BLANK_LINE:", ["./**"]]
+          }
+        }
+      }
+    }
+  }
+}

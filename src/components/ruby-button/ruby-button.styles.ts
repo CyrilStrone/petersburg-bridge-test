@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
 /****************************************** RubyButton *************************************************/
 export const RubyButtonWrapper = styled.div`
@@ -12,7 +12,7 @@ export const RubyButtonWrapper = styled.div`
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
-`
+`;
 
 export const RubyAnimationContainer = styled.div`
   width: 124px;
@@ -22,16 +22,16 @@ export const RubyAnimationContainer = styled.div`
   justify-content: center;
   position: relative;
   user-select: none;
-`
+`;
 
 export const RubyButtonStand = styled.img`
   width: 124px;
   height: 60px;
   background-size: cover;
-`
+`;
 
 export const RubyButtonButton = styled.svg<{
-  $isActive?: boolean
+  $isActive?: boolean;
 }>`
   width: 67px;
   height: 36px;
@@ -51,11 +51,11 @@ export const RubyButtonButton = styled.svg<{
       : css`
           bottom: 34px;
         `}
-`
+`;
 
 export const RubyButtonHammer = styled.img<{
-  $isActive?: boolean
-  $isStart?: boolean
+  $isActive?: boolean;
+  $isStart?: boolean;
 }>`
   object-fit: cover;
   width: 120px;
@@ -75,7 +75,7 @@ export const RubyButtonHammer = styled.img<{
             transform: translate(88px, -40px);
           `};
   z-index: 1;
-`
+`;
 
 /****************************************** RubyInfo *************************************************/
 export const RubyInfoContainer = styled.div`
@@ -84,11 +84,11 @@ export const RubyInfoContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: 13px;
-`
+`;
 
 export const RubyInfoButton = styled.button<{
-  $isActive?: boolean
-  $isStart?: boolean
+  $isActive?: boolean;
+  $isStart?: boolean;
 }>`
   height: 36px;
   width: 172px;
@@ -108,7 +108,7 @@ export const RubyInfoButton = styled.button<{
           background-color: ${props.theme.colors.other.ff42e0};
           border: 1px solid ${props.theme.colors.white[100]};
         `};
-`
+`;
 
 export const RubyInfoText = styled.div`
   height: 32px;
@@ -117,4 +117,4 @@ export const RubyInfoText = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-`
+`;

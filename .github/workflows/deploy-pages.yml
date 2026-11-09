@@ -1,0 +1,54 @@
+name: deploy-pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        env:
+          VITE_DEFAULT_NAME: Petersburg Bridge Test
+          VITE_DEFAULT_NAME_SHORT: Petersburg Bridge
+          VITE_DEFAULT_THEME_COLOR: '#0b0f71'
+          VITE_DEFAULT_DESCRIPTION: Test task for Petersburg Bridge.
+          VITE_NODE_ENV: prod
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+        run: npm run build
+
+      - name: Add SPA fallback
+        run: cp build/index.html build/404.html
+
+      - name: Disable Jekyll
+        run: touch build/.nojekyll
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages
+          force_orphan: true

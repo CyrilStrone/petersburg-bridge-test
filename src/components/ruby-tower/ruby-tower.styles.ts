@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components';
 
 /****************************************** RubyTower *************************************************/
 export const RubyTowerWrapper = styled.div<{ $backgroundURL: string }>`
@@ -16,28 +16,26 @@ export const RubyTowerWrapper = styled.div<{ $backgroundURL: string }>`
   align-items: center;
   gap: 7px;
   user-select: none;
-`
+`;
 
 export const RubyTowerLevelContainer = styled.div<{ $gap?: number }>`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   justify-content: flex-start;
-  gap: ${(props) => `${props.$gap}px`};
-`
+  gap: ${(props) => `${props.$gap ?? 0}px`};
+`;
 
-export const RubyTowerLevel = styled.div<{
-  $width: string | number
-  $height: string | number
-  $color: string
-  $defaultColor: string
-  $isActive?: boolean
+export const RubyTowerLevelItem = styled.div<{
+  $width: string | number;
+  $height: string | number;
+  $color: string;
+  $defaultColor: string;
+  $isActive?: boolean;
 }>`
   position: relative;
-  width: ${(props) =>
-    !isNaN(Number(props.$width)) ? `${props.$width}px` : props.$width};
-  height: ${(props) =>
-    !isNaN(Number(props.$height)) ? `${props.$height}px` : props.$height};
+  width: ${(props) => (!Number.isNaN(Number(props.$width)) ? `${props.$width}px` : props.$width)};
+  height: ${(props) => (!Number.isNaN(Number(props.$height)) ? `${props.$height}px` : props.$height)};
   ${(props) =>
     props.$isActive
       ? css`
@@ -50,10 +48,10 @@ export const RubyTowerLevel = styled.div<{
     border-radius: 7px 7px 0px 0px;
   }
   transition: background-color 0.2s;
-`
+`;
 
 export const RubyTowerLevelLine = styled.div<{
-  $position?: 'horizontal' | 'vertical'
+  $position?: 'horizontal' | 'vertical';
 }>`
   background-color: ${(props) => props.theme.colors.white[40]};
   box-sizing: border-box;
@@ -74,10 +72,10 @@ export const RubyTowerLevelLine = styled.div<{
             width: 3px;
           `
         : ''};
-`
+`;
 
 export const RubyTowerLevelFull = styled.div<{
-  $isActive?: boolean
+  $isActive?: boolean;
 }>`
   position: relative;
   box-sizing: border-box;
@@ -88,25 +86,19 @@ export const RubyTowerLevelFull = styled.div<{
   ${(props) =>
     props.$isActive
       ? css`
-          background: linear-gradient(
-              180deg,
-              rgba(255, 148, 148, 1) 0%,
-              rgba(255, 1, 1, 1) 100%
-            ),
+          background:
+            linear-gradient(180deg, rgba(255, 148, 148, 1) 0%, rgba(255, 1, 1, 1) 100%),
             linear-gradient(to left, #080b3a, #080b3a);
         `
       : css`
-          background: linear-gradient(
-              180deg,
-              rgba(182, 118, 203, 1) 0%,
-              rgba(255, 255, 255, 0) 100%
-            ),
+          background:
+            linear-gradient(180deg, rgba(182, 118, 203, 1) 0%, rgba(255, 255, 255, 0) 100%),
             linear-gradient(to left, #080b3a, #080b3a);
         `};
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const rotate = keyframes`
    0% {
@@ -115,11 +107,11 @@ const rotate = keyframes`
   100% {
     transform: rotate(360deg);
   }
-`
+`;
 
 export const RubyTowerStar = styled.div<{
-  $isShow?: boolean
-  $backgroundURL?: string
+  $isShow?: boolean;
+  $backgroundURL?: string;
 }>`
   position: absolute;
   width: 124px;
@@ -136,10 +128,10 @@ export const RubyTowerStar = styled.div<{
       : ''};
   animation: 1s linear 0s normal none infinite running ${rotate};
   -webkit-animation: 1s linear 0s normal none infinite running ${rotate};
-`
+`;
 
 export const RubyTowerDiamond = styled.div<{
-  $backgroundURL: string
+  $backgroundURL: string;
 }>`
   position: absolute;
   width: 68px;
@@ -149,4 +141,4 @@ export const RubyTowerDiamond = styled.div<{
   background-size: contain;
   z-index: 1;
   background-image: url(${(props) => props.$backgroundURL});
-`
+`;

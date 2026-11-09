@@ -1,0 +1,1 @@
+export { PagePublicGame } from './game';
